@@ -1,0 +1,19 @@
+/* nav{
+    color: #FFFFFF;
+    background-color: rgb(124, 124, 124);
+    position: relative;
+  }
+  .bg-white\/70 {
+    background-color: #ffffc0;
+} */
+
+/* .prose :where(pre):not(:where([class~="not-prose"] *)) {
+  overflow-wrap: break-word;
+}
+ */
+
+ 
+ .vega-embed.has-actions {
+  padding-right: 100px;
+}
+

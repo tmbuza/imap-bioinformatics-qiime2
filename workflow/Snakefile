@@ -1,0 +1,87 @@
+from snakemake.utils import min_version
+
+min_version("6.10.0")
+
+# Configuration file containing all user-specified settings
+configfile: "config/config.yml"
+
+report: "report/workflow.rst"
+
+include: "rules/qiime2_process.smk"
+
+rule all:
+	input:
+		"dags/rulegraph.svg",
+		"index.html",
+		"report.html",
+
+
+		"qiime2_process/q2-sample-metadata.qzv",
+
+
+		"qiime2_process/demux.qza",
+
+
+		"qiime2_process/demux.qzv",
+
+
+		"qiime2_process/rep-seqs.qza",
+		"qiime2_process/feature-table.qza",
+		"qiime2_process/stats.qza",
+
+
+		"qiime2_process/rep-seqs.qzv",
+		"qiime2_process/feature-table.qzv",
+		"qiime2_process/stats.qzv",
+
+
+ 		"qiime2_process/feature-table-dn-99.qza",
+		"qiime2_process/rep-seqs-dn-99.qza",
+
+
+		"qiime2_process/table-cr-85.qza",
+		"qiime2_process/rep-seqs-cr-85.qza",
+		"qiime2_process/unmatched-cr-85.qza",
+
+
+		"qiime2_process/table-or-85.qza",
+		"qiime2_process/rep-seqs-or-85.qza",
+		"qiime2_process/new-ref-seqs-or-85.qza",
+
+
+
+# Get dot rule graphs
+rule dot_rules_graph:
+	output:
+		"dags/rulegraph.svg",
+	shell:
+		"bash workflow/scripts/rules_dag.sh"
+
+
+# Get project tree
+rule project_tree:
+    output:
+        tree="results/project_tree.txt",
+    shell:
+        """
+        bash workflow/scripts/tree.sh
+        """
+
+# Get smk static report
+rule snakemake_html_report:
+    output:
+        smkhtml="report.html",
+        # html2png="images/smkreport/screenshot.png",
+    shell:
+        """
+        bash workflow/scripts/smk_html_report.sh
+        """
+
+# User styled report for GHPages
+rule deploy_to_github_pages:
+    output:
+        doc="index.html",
+    shell:
+        """
+        R -e "library(rmarkdown); render('index.Rmd')"
+        """
