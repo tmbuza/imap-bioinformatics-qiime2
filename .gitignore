@@ -2,6 +2,7 @@
 qiime2_process/*
 mothur_process/*
 !mothur_process/final.*
+workflow/envs/qiime2/final.*
 current_files.summary
 .vscode/*
 .DS_store
