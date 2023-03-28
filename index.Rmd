@@ -1,10 +1,10 @@
 ---
-title:  "<big><u>IMAP-PART 05</u></big><br><br>Microbial profiling using QIIME2 pipeline with Snakemake workflows<br><br>"
+title:  "<big><u>IMAP-PART 06</u></big><br><br>Microbial profiling using QIIME2 pipeline with Snakemake workflows<br><br>"
 subtitle: |
   | ![](images/16srrna.png)<br>
   | Fostering Reproducible Microbiome data Analysis with Snakemake workflow
 date:
-- IMAP-PART 05<br>[Latest GitHub-Repo](https://github.com/tmbuza/imap-bioinformatics-qiime2/)<br>
+- IMAP-PART 06<br>[Latest GitHub-Repo](https://github.com/tmbuza/imap-bioinformatics-qiime2/)<br>
 - Maintained by Teresia Mrema-Buza<br><br>
 - <b>Updated on `r Sys.Date()`</b>
 author: Teresia Mrema-Buza
@@ -58,7 +58,7 @@ library(tidyverse, suppressPackageStartupMessages())
 library(schtools)
 ```
 
-# Microbiome Bioinformatics Snakemake workflow
+# Microbiome analysis with QIIME2
 
 ...BRIEF INTRO IN PROGRESS...
 
@@ -77,7 +77,12 @@ You will be able to explore the workflow and the associated statistics. You can 
 
 <br>
 
-```{r child='workflow/scripts/02_qiime2_pipeline.Rmd'}
+```{r child='workflow/scripts/01_qiime2_getting_started.Rmd'}
+```
+
+<br>
+
+```{r child='workflow/scripts/02_qiime2_seq_clustering.Rmd'}
 ```
 
 <br><hr width=100%><br>

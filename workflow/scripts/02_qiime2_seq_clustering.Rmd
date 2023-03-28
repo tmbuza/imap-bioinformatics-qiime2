@@ -1,0 +1,28 @@
+## Classification methods
+
+### 1. De novo clustering
+Sequences are clustered against one another.
+
+### Closed-reference clustering
+Here the clustering is performed at 99% identity against the Greengenes reference database.
+
+### Open-reference clustering
+Here the clustering is performed at 99% identity against the Greengenes reference database.
+
+<br>
+
+## Alignment of representative sequences
+- The MAFFT (Multiple Alignment using Fast Fourier Transform) software provides alignments of the representative sequences.
+- Then we will run alignment mask function to remove poor alignments.
+
+<br>
+
+## Quality control and feature table with DADA2
+QIIME2 uses DADA2 [@DADA22016] tool for:
+
+- Detecting poor reads in Illumina amplicon sequence data.
+- Denoising.
+- Filtering chimeric sequences.
+- Filtering any phiX reads present in marker gene.
+- Construction of feature table.
+
