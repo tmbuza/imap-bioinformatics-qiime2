@@ -1,10 +1,10 @@
 ---
-title:  "<big><u>IMAP-PART 05</u></big><br><br>Microbiome Bioinformatics with integrated pipelines and Snakemake workflow<br><br>"
+title:  "<big><u>IMAP-PART 05</u></big><br><br>Microbial profiling using QIIME2 pipeline with Snakemake workflows<br><br>"
 subtitle: |
-  | ![](images/bioinformatics.png)<br>
+  | ![](images/16srrna.png)<br>
   | Fostering Reproducible Microbiome data Analysis with Snakemake workflow
 date:
-- IMAP-PART 05<br>[Latest GitHub-Repo](https://github.com/tmbuza/imap-bioinformatics-analysis/)<br>
+- IMAP-PART 05<br>[Latest GitHub-Repo](https://github.com/tmbuza/imap-bioinformatics-qiime2/)<br>
 - Maintained by Teresia Mrema-Buza<br><br>
 - <b>Updated on `r Sys.Date()`</b>
 author: Teresia Mrema-Buza
@@ -20,7 +20,7 @@ link-citations: true
 mainfont:
 biblio-style: apalike
 email_address: "tmbuza@complexdatainsights.com"
-github_repo: "https://github.com/tmbuza/imap-bioinformatics-analysis"
+github_repo: "https://github.com/tmbuza/imap-bioinformatics-qiime2"
 description: |
   | How to get started with systematic microbiome data analysis with Snakemake workflows.
 ---
@@ -58,8 +58,18 @@ library(tidyverse, suppressPackageStartupMessages())
 library(schtools)
 ```
 
-# Microbiome and multi-omics snakemake workflows
-## General overview
+# Microbiome Bioinformatics Snakemake workflow
+
+...BRIEF INTRO IN PROGRESS...
+
+<br>
+
+```{bash ruledag, include=FALSE}
+bash workflow/scripts/rules_dag.sh
+```
+
+![](dags/rulegraph.svg)
+
 A tentative snakemake workflow that defines **qiime2 bioinformatics rules** in a DAG (directed acyclic graph) format. 
 A detailed interactive snakemake HTML report is available [here](https://complexdatainsights.com/imap/imap-bioinformatics-qiime2/report.html). 
 You will be able to explore the workflow and the associated statistics. You can close the left bar (overlap) to get a more expansive display view.
@@ -82,19 +92,11 @@ You will be able to explore the workflow and the associated statistics. You can 
 | [IMAP-PART 02](https://github.com/tmbuza/imap-sample-metadata/) | Downloading and exploring microbiome sample metadata from SRA Database | [In-progress](https://tmbuza.github.io/imap-sample-metadata/) |
 | [IMAP-PART 03](https://github.com/tmbuza/imap-download-sra-reads/) | Downloading and filtering microbiome sequencing data from SRA database | [In-progress](https://tmbuza.github.io/imap-download-sra-reads/) |
 | [IMAP-PART 04](https://github.com/tmbuza/imap-read-quality-control/) | Quality Control of Microbiome Next Generation Sequencing Reads | [In-progress](https://tmbuza.github.io/imap-read-quality-control/) |
-| [IMAP-PART 05](https://github.com/tmbuza/imap-bioinformatics-mothur/) | Microbial profiling using Mothur pipeline with Snakemake workflows | [In-progress](https://tmbuza.github.io/imap-bioinformatics-mothur/) |
-| [IMAP-PART 06](https://github.com/tmbuza/imap-bioinformatics-qiime2/) | Microbial profiling using Qiime2 pipeline with Snakemake workflows | [In-progress](https://tmbuza.github.io/imap-bioinformatics-qiime2/) |
-| [IMAP-PART 07](https://github.com/tmbuza/imap-bioinformatics-biobakery/) | Microbial & Functional profiling using Biobakery pipelines with Snakemake workflows | [In-progress](https://tmbuza.github.io/imap-metagenomics-analysis/) |
-| [IMAP-SUMMARY](https://github.com/tmbuza/imap-snakemake-workflows/) | Summary of Snakemake workflows for microbiome data analysis | [In-progress](https://tmbuza.github.io/imap-snakemake-workflows/) |
+| [IMAP-PART 05](https://github.com/tmbuza/imap-bioinformatics-mothur/) | Microbial profiling using MOTHUR and Snakemake workflows | [In-progress](https://tmbuza.github.io/imap-bioinformatics-mothur/) |
+| [IMAP-PART 06](https://github.com/tmbuza/imap-bioinformatics-qiime2/) | Microbial profiling using QIIME2 and Snakemake workflows | [In-progress](https://tmbuza.github.io/imap-bioinformatics-qiime2/) |
+| [IMAP-SUMMARY](https://github.com/tmbuza/imap-snakemake-workflows/) | Summary ofnakemake workflows for microbiome data analysis | [In-progress](https://tmbuza.github.io/imap-snakemake-workflows/) |
+
 ```
-
-<br><hr width=100%><hr width=100%><br>
-
-# Multi-Omics data analysis
-
-...BRIEF INTRO IN PROGRESS...
-
-<br>
 
 ## Citation
 
@@ -119,7 +121,6 @@ bash workflow/scripts/tree.sh
 cat results/project_tree.txt
 ```
 
-<br>
 
 ## Troubleshooting of FAQs
 <ol>

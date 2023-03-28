@@ -16,18 +16,18 @@ rule all:
 		"report.html",
 
 
-		"qiime2_process/q2-sample-metadata.qzv",
+		# "qiime2_process/q2-sample-metadata.qzv",
 
 
-		"qiime2_process/demux.qza",
+		# "qiime2_process/demux.qza",
 
 
 		"qiime2_process/demux.qzv",
 
 
-		"qiime2_process/rep-seqs.qza",
-		"qiime2_process/feature-table.qza",
-		"qiime2_process/stats.qza",
+		# "qiime2_process/rep-seqs.qza",
+		# "qiime2_process/feature-table.qza",
+		# "qiime2_process/stats.qza",
 
 
 		"qiime2_process/rep-seqs.qzv",
@@ -48,7 +48,17 @@ rule all:
 		"qiime2_process/rep-seqs-or-85.qza",
 		"qiime2_process/new-ref-seqs-or-85.qza",
 
+		"qiime2_process/aligned-rep-seqs.qza",
+		"qiime2_process/masked-aligned-rep-seqs.qza",
+		"qiime2_process/masked-aligned-rep-seqs.qzv",
 
+  		"qiime2_process/unrooted-tree.qza",
+  		"qiime2_process/rooted-tree.qza",
+	
+  		"qiime2_process/taxonomy.qza",
+  		"qiime2_process/taxonomy.qzv",
+
+		"qiime2_process/taxa-bar-plots.qzv"
 
 # Get dot rule graphs
 rule dot_rules_graph:
