@@ -126,6 +126,12 @@ bash workflow/scripts/tree.sh
 cat results/project_tree.txt
 ```
 
+<br>
+
+![](mages/smkreport/screenshot.png)
+
+<br>
+
 
 ## Troubleshooting of FAQs
 <ol>
