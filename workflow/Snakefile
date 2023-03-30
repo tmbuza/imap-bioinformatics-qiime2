@@ -8,13 +8,11 @@ configfile: "config/config.yml"
 report: "report/workflow.rst"
 
 include: "rules/qiime2_process.smk"
+include: "rules/rmd_report.smk"
 
 rule all:
 	input:
-		"dags/rulegraph.svg",
 		"index.html",
-		"report.html",
-
 
 		"qiime2_process/sample-metadata.qzv",
 
@@ -52,48 +50,9 @@ rule all:
 		"qiime2_process/masked-aligned-rep-seqs.qza",
 		"qiime2_process/masked-aligned-rep-seqs.qzv",
 
-  		"qiime2_process/unrooted-tree.qza",
-  		"qiime2_process/rooted-tree.qza",
+		"qiime2_process/transformed/feature-table.tsv",
+		"qiime2_process/transformed/taxonomy.tsv",
+
+		# "qiime2_process/unrooted-tree/tree.smk",
+		# "qiime2_process/rooted-tree/tree.smk",
 	
-  		"qiime2_process/taxonomy.qza",
-  		"qiime2_process/taxonomy.qzv",
-
-		"qiime2_process/feature-table.biom",
-		"qiime2_process/feature-table.tsv",
-
-
-# Get dot rule graphs
-rule dot_rules_graph:
-	output:
-		"dags/rulegraph.svg",
-	shell:
-		"bash workflow/scripts/rules_dag.sh"
-
-
-# Get project tree
-rule project_tree:
-    output:
-        tree="results/project_tree.txt",
-    shell:
-        """
-        bash workflow/scripts/tree.sh
-        """
-
-# Get smk static report
-rule snakemake_html_report:
-    output:
-        smkhtml="report.html",
-        html2png="images/smkreport/screenshot.png",
-    shell:
-        """
-        bash workflow/scripts/smk_html_report.sh
-        """
-
-# User styled report for GHPages
-rule deploy_to_github_pages:
-    output:
-        doc="index.html",
-    shell:
-        """
-        R -e "library(rmarkdown); render('index.Rmd')"
-        """

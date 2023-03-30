@@ -128,7 +128,7 @@ cat results/project_tree.txt
 
 <br>
 
-![](mages/smkreport/screenshot.png)
+![](images/smkreport/screenshot.png)
 
 <br>
 

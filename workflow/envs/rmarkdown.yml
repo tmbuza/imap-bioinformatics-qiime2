@@ -1,0 +1,10 @@
+name: srametadata
+channels:
+  - conda-forge
+  - r
+  - anaconda
+dependencies:
+  - r-rmarkdown =2.20
+  - graphviz =6.0.1
+  - html2image
+  - pip =23.0.1

@@ -2,6 +2,8 @@ rule import_qiime2_mapping_files:
 	output:
 		manifest="resources/metadata/qiime2_manifest_file.tsv",
 		metadata="resources/metadata/qiime2_metadata_file.tsv",
+	conda:
+		"../envs/bash.yml"
 	shell:
 		"bash workflow/scripts/import_qiime2_metadata.sh"
 
@@ -178,27 +180,14 @@ rule qiime2_taxonomic_assignment:
 
 
 # Data transformation
-rule qiime2_data_transformation:
+rule qiime2_process_tsv_nwk_files:
 	input:
   		"qiime2_process/feature-table.qza",
 	output:
-		"qiime2_process/feature-table.biom",
-		"qiime2_process/feature-table.tsv",
-		"qiime2_process/feature-taxonomy-table.qzv",
+		"qiime2_process/transformed/feature-table.tsv",
+		"qiime2_process/transformed/taxonomy.tsv",
+		"qiime2_process/transformed/feature-taxonomy-table.qzv",
 	conda:
 		"../envs/qiime220232.yml"
 	shell:
 		"bash workflow/scripts/qiime2_data_transformation.sh"
-
-# QIIME Data visualization
-rule qiime2_taxa_interactive_barplots:
-	input:
-  		"qiime2_process/feature-table.qza",
-		"qiime2_process/taxonomy.qza",
-		"resources/metadata/qiime2_metadata_file.tsv"
-	output:
-		"qiime2_process/taxa-bar-plots.qzv"
-	conda:
-		"../envs/qiime220232.yml"
-	shell:
-		"bash workflow/scripts/qiime2_taxa_barplots.sh"
