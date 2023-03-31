@@ -180,14 +180,15 @@ rule qiime2_taxonomic_assignment:
 
 
 # Data transformation
-rule qiime2_process_tsv_nwk_files:
+rule qiime2_process_tsv_files:
 	input:
   		"qiime2_process/feature-table.qza",
 	output:
-		"qiime2_process/transformed/feature-table.tsv",
-		"qiime2_process/transformed/taxonomy.tsv",
-		"qiime2_process/transformed/feature-taxonomy-table.qzv",
+		featable="qiime2_process/transformed/feature-table.tsv",
+		taxonomy="qiime2_process/transformed/taxonomy.tsv",
 	conda:
 		"../envs/qiime220232.yml"
 	shell:
 		"bash workflow/scripts/qiime2_data_transformation.sh"
+
+

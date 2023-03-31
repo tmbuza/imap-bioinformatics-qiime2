@@ -22,7 +22,7 @@ biblio-style: apalike
 email_address: "tmbuza@complexdatainsights.com"
 github_repo: "https://github.com/tmbuza/imap-bioinformatics-qiime2"
 description: |
-  | How to get started with systematic microbiome data analysis with Snakemake workflows.
+  | Systematic microbiome data analysis with Snakemake workflows.
 ---
 
 
@@ -99,6 +99,7 @@ You will be able to explore the workflow and the associated statistics. You can 
 | [IMAP-PART 04](https://github.com/tmbuza/imap-read-quality-control/) | Quality Control of Microbiome Next Generation Sequencing Reads | [In-progress](https://tmbuza.github.io/imap-read-quality-control/) |
 | [IMAP-PART 05](https://github.com/tmbuza/imap-bioinformatics-mothur/) | Microbial profiling using MOTHUR and Snakemake workflows | [In-progress](https://tmbuza.github.io/imap-bioinformatics-mothur/) |
 | [IMAP-PART 06](https://github.com/tmbuza/imap-bioinformatics-qiime2/) | Microbial profiling using QIIME2 and Snakemake workflows | [In-progress](https://tmbuza.github.io/imap-bioinformatics-qiime2/) |
+| [IMAP-PART 07](https://github.com/tmbuza/imap-data-preprocessing/) | Preprocessing of microbiome bioinformatics outputin R| [In-progress](https://tmbuza.github.io/imap-data-preprocessing/) |
 | [IMAP-SUMMARY](https://github.com/tmbuza/imap-snakemake-workflows/) | Summary ofnakemake workflows for microbiome data analysis | [In-progress](https://tmbuza.github.io/imap-snakemake-workflows/) |
 
 ```
