@@ -35,21 +35,21 @@ mkdir -p "${OUTPUT}"
 #     --o-filtered-seqs "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-filt.qza \
 #     --o-discarded-seqs "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-discard.qza
 
-echo PROGRESS: Dereplication of sequences and taxonomy
+# echo PROGRESS: Dereplication of sequences and taxonomy
 
-qiime rescript dereplicate \
-    --i-sequences "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-filt.qza  \
-    --i-taxa "${OUTPUT}"/silva-138.1-ssu-nr99-tax.qza \
-    --p-mode 'uniq' \
-    --o-dereplicated-sequences "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-derep-uniq.qza \
-    --o-dereplicated-taxa "${OUTPUT}"/silva-138.1-ssu-nr99-tax-derep-uniq.qza
+# qiime rescript dereplicate \
+#     --i-sequences "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-filt.qza  \
+#     --i-taxa "${OUTPUT}"/silva-138.1-ssu-nr99-tax.qza \
+#     --p-mode 'uniq' \
+#     --o-dereplicated-sequences "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-derep-uniq.qza \
+#     --o-dereplicated-taxa "${OUTPUT}"/silva-138.1-ssu-nr99-tax-derep-uniq.qza
 
-# echo PROGRESS: Making SILVA full-length SSU classifier
+echo PROGRESS: Making SILVA full-length SSU classifier
 
-# qiime feature-classifier fit-classifier-naive-bayes \
-#   --i-reference-reads  "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-derep-uniq.qza \
-#   --i-reference-taxonomy "${OUTPUT}"/silva-138.1-ssu-nr99-tax-derep-uniq.qza \
-#   --o-classifier "${OUTPUT}"/silva-138.1-ssu-nr99-classifier.qza
+qiime feature-classifier fit-classifier-naive-bayes \
+  --i-reference-reads  "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-derep-uniq.qza \
+  --i-reference-taxonomy "${OUTPUT}"/silva-138.1-ssu-nr99-tax-derep-uniq.qza \
+  --o-classifier "${OUTPUT}"/silva-138.1-ssu-nr99-classifier.qza
 
 # echo PROGRESS: Making amplicon-region specific classifier
 
@@ -66,15 +66,15 @@ qiime rescript dereplicate \
 # echo PROGRESS: Dereplication extracted region
 
 # qiime rescript dereplicate \
-#     --i-sequences silva-138.1-ssu-nr99-seqs-515f-806r.qza \
-#     --i-taxa silva-138.1-ssu-nr99-tax-derep-uniq.qza \
+#     --i-sequences "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-515f-806r.qza \
+#     --i-taxa "${OUTPUT}"/silva-138.1-ssu-nr99-tax-derep-uniq.qza \
 #     --p-mode 'uniq' \
-#     --o-dereplicated-sequences silva-138.1-ssu-nr99-seqs-515f-806r-uniq.qza \
-#     --o-dereplicated-taxa  silva-138.1-ssu-nr99-tax-515f-806r-derep-uniq.qza
+#     --o-dereplicated-sequences "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-515f-806r-uniq.qza \
+#     --o-dereplicated-taxa  "${OUTPUT}"/silva-138.1-ssu-nr99-tax-515f-806r-derep-uniq.qza
 
 # echo PROGRESS: Building amplicon-region specific classifier
 
 # qiime feature-classifier fit-classifier-naive-bayes \
-#     --i-reference-reads silva-138.1-ssu-nr99-seqs-515f-806r-uniq.qza \
-#     --i-reference-taxonomy silva-138.1-ssu-nr99-tax-515f-806r-derep-uniq.qza \
-#     --o-classifier silva-138.1-ssu-nr99-515f-806r-classifier.qza
+#     --i-reference-reads "${OUTPUT}"/silva-138.1-ssu-nr99-seqs-515f-806r-uniq.qza \
+#     --i-reference-taxonomy "${OUTPUT}"/silva-138.1-ssu-nr99-tax-515f-806r-derep-uniq.qza \
+#     --o-classifier "${OUTPUT}"/silva-138.1-ssu-nr99-515f-806r-classifier.qza

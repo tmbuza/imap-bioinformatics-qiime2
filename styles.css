@@ -1,6 +1,6 @@
-body{ font-size: 14px; text-align: left; font-family: "Merriweather"; background-color: #cccccc;}
-body h1{ font-size: 3.0em; text-transform: capitalize; font-family: "Roboto" ;  font-weight: 700; }
-body h2 { margin-top: 1.5em; font-size: 2.0em; }
+body { font-size: 14px; text-align: left; font-family: "Merriweather"; background-color: #cccccc;}
+body #main-container h1 { font-size: 3.0em; text-transform: capitalize; font-family: "Roboto" ;  font-weight: 400;}
+body h2 { margin-top: 1.5em; font-size: 2.0em; color: rgb(77, 148, 248);}
 body h3 { margin-top: 1.5em; font-size: 1.6em; }
 body h4 { margin-top: 1.5em; font-size: 1.2em; }
 body h5 { margin-top: 1.5em; font-size: 1em; }
@@ -15,7 +15,7 @@ p { line-height: 2; }
 
 #header { color: white; margin-left: auto; margin-right: auto; 
   text-align: center; line-height: 1.5; width: 100%; padding: 5%; 
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(1, 97, 20, 0.9), rgb(233, 240, 28, 0.8), rgb(238, 244, 162)), url("images/bkgd.png");
+  background: linear-gradient(to bottom, rgba(0, 15, 80, 0.957), rgba(1, 76, 97, 0.9), rgb(233, 240, 28, 0.7), rgb(238, 247, 120)), url("images/bkgd.png");
   /* url("images/bkgd.png"); */
   /* background-image: url("images/bkgd.png"); */
   background-position: bottom;
