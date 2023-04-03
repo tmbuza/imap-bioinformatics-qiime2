@@ -168,7 +168,7 @@ rule qiime2_phylogeny_rooted_tree:
 
 rule qiime2_taxonomic_assignment:
 	input:
-  		"resources/gg-13-8-99-515-806-nb-classifier.qza",
+  		"resources/silva-138.1-ssu-nr99-rna-seqs.qza",
 		"qiime2_process/rep-seqs-dn-99.qza",
 	output:
   		"qiime2_process/taxonomy.qza",

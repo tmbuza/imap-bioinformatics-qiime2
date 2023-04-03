@@ -12,7 +12,7 @@ container: "continuumio/miniconda3:4.8.2"
 
 
 ###### Config file and sample sheets #####
-configfile: "config/config.yaml"
+configfile: "config/config.yml"
 
 
 validate(config, schema="../schemas/config.schema.yaml")

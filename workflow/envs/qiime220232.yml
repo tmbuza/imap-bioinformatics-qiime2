@@ -9,3 +9,4 @@ dependencies:
   - q2-dada2=2023.2.0
   - q2-vsearch=2023.2.0
   - qiime2=2023.2.0
+  - rescript =2023.2.0

@@ -53,5 +53,5 @@ rule all:
 		"qiime2_process/transformed/feature-table.tsv",
 		"qiime2_process/transformed/taxonomy.tsv",
 
-		"qiime2_data_analysis/qiime2_composite.tsv",
+		"qiime2_process/qiime2_composite.tsv",
 	
