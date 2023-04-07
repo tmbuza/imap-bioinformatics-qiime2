@@ -164,6 +164,8 @@ QIIME2 uses ANCOM (Analysis of Composition) to identify differentially abundant 
 ::: {#refs}
 :::
 
+
+
 <br><hr width=100%><br>
 
 # Appendix {-}
@@ -188,6 +190,8 @@ bash workflow/scripts/smk_html_report.sh
 <br>
 
 
+
+<!-- ##### -->
 ## Troubleshooting of FAQs
 <ol>
   <li>Question</li>
