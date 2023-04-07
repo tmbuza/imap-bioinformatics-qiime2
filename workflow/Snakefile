@@ -8,6 +8,17 @@ configfile: "config/config.yml"
 report: "report/workflow.rst"
 
 include: "rules/qiime2_process.smk"
+include: "rules/dada2_qc.smk"
+include: "rules/denovo_cluster.smk"
+include: "rules/closedref_cluster.smk"
+include: "rules/openref_cluster.smk"
+include: "rules/seq_alignment.smk"
+include: "rules/phylogeny_cluster.smk"
+include: "rules/assign_taxonomy.smk"
+include: "rules/convert_to_tsv.smk"
+include: "rules/collapse_taxa.smk"
+include: "rules/alpha_rarefaction.smk"
+include: "rules/qiime2_core_metrics.smk"
 include: "rules/rmd_report.smk"
 
 rule all:
@@ -53,5 +64,10 @@ rule all:
 		"qiime2_process/transformed/feature-table.tsv",
 		"qiime2_process/transformed/taxonomy.tsv",
 
-		"qiime2_process/qiime2_composite.tsv",
-	
+		"qiime2_process/feature-table-genus.qza",
+		
+		"qiime2_process/alpha-rarefaction.qzv",
+
+
+		"qiime2_process/alpha_diversity/shannon_vector.qza",
+		"qiime2_process/beta_diversity/bray_curtis_emperor.qzv"

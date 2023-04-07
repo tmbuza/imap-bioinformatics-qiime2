@@ -6,3 +6,8 @@ samples: config/samples.tsv
 # Path to sequencing unit sheet (TSV format, columns: sample_name, unit, fq1, fq2)
 units: config/units.tsv
 
+core_sampling_depth: 1000
+
+alpha_max_depth: 1000
+
+threads: 1

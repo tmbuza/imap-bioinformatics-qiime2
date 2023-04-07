@@ -37,7 +37,6 @@ rule deploy_to_github_pages:
 	input:
 		dag="dags/rulegraph.svg",
 		tree="results/project_tree.txt",
-		smkpng="images/smkreport/screenshot.png",
 	output:
 		doc="index.html",
 	conda:

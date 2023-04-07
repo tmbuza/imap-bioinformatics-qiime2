@@ -71,8 +71,7 @@ bash workflow/scripts/rules_dag.sh
 ![](dags/rulegraph.svg)
 
 A tentative snakemake workflow that defines **qiime2 bioinformatics rules** in a DAG (directed acyclic graph) format. 
-A detailed interactive snakemake HTML report is available [here](https://complexdatainsights.com/imap/imap-bioinformatics-qiime2/report.html). 
-You will be able to explore the workflow and the associated statistics. You can close the left bar (overlap) to get a more expansive display view.
+A detailed interactive snakemake HTML report is available [here](https://complexdatainsights.com/imap/imap-bioinformatics-qiime2/report.html). Use a wider screen to get a better interactive snakemake report.
 
 
 <br>
@@ -87,6 +86,53 @@ You will be able to explore the workflow and the associated statistics. You can 
 
 ## Preparing SILVA reference database
 How? As described [here](https://forum.qiime2.org/t/processing-filtering-and-evaluating-the-silva-database-and-other-reference-sequence-data-with-rescript/15494)
+
+
+# QIIME2 diversity analysis
+> As described [here](https://docs.qiime2.org/2019.7/tutorials/moving-pictures/#alpha-and-beta-diversity-analysis)
+
+
+## Alpha diversity metrics
+- Shannon’s diversity index (a quantitative measure of community richness)-
+- Observed OTUs (a qualitative measure of community richness)
+- Faith’s Phylogenetic Diversity (a qualitiative measure of community richness that incorporates phylogenetic relationships between the features)
+- Evenness (or Pielou’s Evenness; a measure of community evenness)
+
+## Beta diversity metrics 
+- Jaccard distance (a qualitative measure of community dissimilarity)
+- Bray-Curtis distance (a quantitative measure of community dissimilarity)
+- unweighted UniFrac distance (a qualitative measure of community dissimilarity that incorporates phylogenetic relationships between the features)
+- weighted UniFrac distance (a quantitative measure of community dissimilarity that incorporates phylogenetic relationships between the features)
+
+## Expected output artifacts
+- Saved FeatureTable[Frequency] to: qiime2_process/core-metrics/rarefied_table.qza
+- Saved SampleData[AlphaDiversity] to: qiime2_process/core-metrics/faith_pd_vector.qza
+- Saved SampleData[AlphaDiversity] to: qiime2_process/core-metrics/observed_features_vector.qza
+- Saved SampleData[AlphaDiversity] to: qiime2_process/core-metrics/shannon_vector.qza
+- Saved SampleData[AlphaDiversity] to: qiime2_process/core-metrics/evenness_vector.qza
+- Saved DistanceMatrix to: qiime2_process/core-metrics/unweighted_unifrac_distance_matrix.qza
+- Saved DistanceMatrix to: qiime2_process/core-metrics/weighted_unifrac_distance_matrix.qza
+- Saved DistanceMatrix to: qiime2_process/core-metrics/jaccard_distance_matrix.qza
+- Saved DistanceMatrix to: qiime2_process/core-metrics/bray_curtis_distance_matrix.qza
+- Saved PCoAResults to: qiime2_process/core-metrics/unweighted_unifrac_pcoa_results.qza
+- Saved PCoAResults to: qiime2_process/core-metrics/weighted_unifrac_pcoa_results.qza
+- Saved PCoAResults to: qiime2_process/core-metrics/jaccard_pcoa_results.qza
+- Saved PCoAResults to: qiime2_process/core-metrics/bray_curtis_pcoa_results.qza
+
+
+## Expected output visualizations
+- Saved Visualization to: qiime2_process/core-metrics/unweighted_unifrac_emperor.qzv
+- Saved Visualization to: qiime2_process/core-metrics/weighted_unifrac_emperor.qzv
+- Saved Visualization to: qiime2_process/core-metrics/jaccard_emperor.qzv
+- Saved Visualization to: qiime2_process/core-metrics/bray_curtis_emperor.qzv
+
+
+## Exploring beta diversity metric
+- - Qiime2 uses `Emperor`interactive tool [@Emperor2013] for exploring beta diversity metrics
+
+
+## Differential abundance
+QIIME2 uses ANCOM (Analysis of Composition) to identify differentially abundant taxa.
 
 
 <br><hr width=100%><br>
@@ -132,6 +178,10 @@ cat results/project_tree.txt
 ```
 
 <br>
+
+```{bash}
+bash workflow/scripts/smk_html_report.sh
+```
 
 ![](images/smkreport/screenshot.png)
 

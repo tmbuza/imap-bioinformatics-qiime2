@@ -1,0 +1,6 @@
+## DNA extraction
+- Type: 16S rDNA gene sequencing
+- Region: V6V7 regions of 16S rDNA gene were amplified
+- Primers
+    - Forward: TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGATTGACGGGGRCCCGCACAAG 
+    - Reverse: GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGCGTCRTCCCCTCCTTCC
