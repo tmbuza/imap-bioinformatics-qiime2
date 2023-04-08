@@ -7,6 +7,7 @@ configfile: "config/config.yml"
 
 report: "report/workflow.rst"
 
+include: "rules/import_qiime2_metadata.smk"
 include: "rules/qiime2_process.smk"
 include: "rules/dada2_qc.smk"
 include: "rules/denovo_cluster.smk"
@@ -60,6 +61,10 @@ rule all:
 		"qiime2_process/aligned-rep-seqs.qza",
 		"qiime2_process/masked-aligned-rep-seqs.qza",
 		"qiime2_process/masked-aligned-rep-seqs.qzv",
+
+
+		"qiime2_process/unrooted-tree.qza",
+  		"qiime2_process/rooted-tree.qza",
 
 		"qiime2_process/transformed/feature-table.tsv",
 		"qiime2_process/transformed/taxonomy.tsv",

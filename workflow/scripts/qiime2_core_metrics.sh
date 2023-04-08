@@ -1,4 +1,5 @@
 OUTDIR=qiime2_process
+METADATADIR="resources/metadata"
 
 rarefiedtable=${OUTDIR}/alpha_diversity/rarefied_table.qza
 faithpdvector=${OUTDIR}/alpha_diversity/faith_pd_vector.qza
@@ -22,7 +23,7 @@ qiime diversity core-metrics-phylogenetic \
   --i-phylogeny ${OUTDIR}/rooted-tree.qza \
   --i-table ${OUTDIR}/feature-table.qza \
   --p-sampling-depth 1000 \
-  --m-metadata-file ${OUTDIR}/sample-metadata.tsv \
+  --m-metadata-file ${METADATADIR}/qiime2_metadata_file.tsv \
   --o-rarefied-table ${rarefiedtable} \
   --o-faith-pd-vector ${faithpdvector} \
   --o-observed-features-vector ${observedfeatures} \

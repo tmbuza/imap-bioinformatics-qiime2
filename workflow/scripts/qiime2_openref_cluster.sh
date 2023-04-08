@@ -3,7 +3,7 @@ echo PROGRESS: Performing denovo clustering with refs from "https://data.qiime2.
 qiime vsearch cluster-features-open-reference \
   --i-table $PWD/qiime2_process/feature-table.qza \
   --i-sequences $PWD/qiime2_process/rep-seqs.qza \
-  --i-reference-sequences $PWD/resources/85_otus.qza \
+  --i-reference-sequences $PWD/resources/gg_classifier/85_otus.qza \
   --p-perc-identity 0.85 \
   --o-clustered-table $PWD/qiime2_process/table-or-85.qza \
   --o-clustered-sequences $PWD/qiime2_process/rep-seqs-or-85.qza \

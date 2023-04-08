@@ -1,4 +1,4 @@
-rule qiime2_feature_n_taxonomy_tsv:
+rule qiime2_covert_to_tsv:
 	input:
   		"qiime2_process/feature-table.qza",
   		"qiime2_process/taxonomy.qza",

@@ -2,7 +2,7 @@ rule qiime2_openref_cluster:
 	input:
 		"qiime2_process/feature-table.qza",
 		"qiime2_process/rep-seqs.qza",
-		"resources/85_otus.qza",
+		"resources/gg_classifier/85_otus.qza",
 	output:
 		"qiime2_process/table-or-85.qza",
 		"qiime2_process/rep-seqs-or-85.qza",

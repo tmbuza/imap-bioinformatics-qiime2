@@ -3,7 +3,7 @@ echo PROGRESS: Performing closed ref clustering with refs from "https://data.qii
 qiime vsearch cluster-features-closed-reference \
   --i-table $PWD/qiime2_process/feature-table.qza \
   --i-sequences $PWD/qiime2_process/rep-seqs.qza \
-  --i-reference-sequences $PWD/resources/85_otus.qza \
+  --i-reference-sequences $PWD/resources/gg_classifier/85_otus.qza \
   --p-perc-identity 0.85 \
   --o-clustered-table $PWD/qiime2_process/table-cr-85.qza \
   --o-clustered-sequences $PWD/qiime2_process/rep-seqs-cr-85.qza \

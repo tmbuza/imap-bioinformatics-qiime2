@@ -1,6 +1,6 @@
 rule qiime2_taxonomic_assignment:
 	input:
-  		"resources/silva-138.1-ssu-nr99-rna-seqs.qza",
+  		"resources/gg_classifier/gg-13-8-99-515-806-nb-classifier.qza",
 		"qiime2_process/rep-seqs-dn-99.qza",
 	output:
   		"qiime2_process/taxonomy.qza",
