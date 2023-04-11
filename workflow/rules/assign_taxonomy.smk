@@ -8,4 +8,4 @@ rule qiime2_taxonomic_assignment:
 	conda:
 		"../envs/qiime220232.yml"
 	shell:
-		"bash workflow/scripts/qiime2_taxonomic_assign.sh"
+		"bash workflow/scripts/qiime2_assign_taxonomy.sh"

@@ -21,6 +21,7 @@ include: "rules/collapse_taxa.smk"
 include: "rules/alpha_rarefaction.smk"
 include: "rules/qiime2_core_metrics.smk"
 include: "rules/rmd_report.smk"
+include: "rules/filter_samples.smk"
 
 rule all:
 	input:
@@ -75,4 +76,6 @@ rule all:
 
 
 		"qiime2_process/alpha_diversity/shannon_vector.qza",
-		"qiime2_process/beta_diversity/bray_curtis_emperor.qzv"
+		"qiime2_process/beta_diversity/bray_curtis_emperor.qzv",
+
+		"results/early-table.qza",
