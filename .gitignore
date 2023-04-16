@@ -1,4 +1,5 @@
 # Additional
+qiime2_process*
 qiime2_process/*
 mothur_process/*
 !mothur_process/final.*

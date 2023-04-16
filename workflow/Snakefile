@@ -7,75 +7,99 @@ configfile: "config/config.yml"
 
 report: "report/workflow.rst"
 
-include: "rules/import_qiime2_metadata.smk"
-include: "rules/qiime2_process.smk"
-include: "rules/dada2_qc.smk"
-include: "rules/denovo_cluster.smk"
-include: "rules/closedref_cluster.smk"
-include: "rules/openref_cluster.smk"
-include: "rules/seq_alignment.smk"
-include: "rules/phylogeny_cluster.smk"
-include: "rules/assign_taxonomy.smk"
-include: "rules/convert_to_tsv.smk"
-include: "rules/collapse_taxa.smk"
-include: "rules/alpha_rarefaction.smk"
-include: "rules/qiime2_core_metrics.smk"
+include: "rules/import_metadata.smk"
+include: "rules/validate_metadata.smk"
+include: "rules/qzv_metadata_to_tsv.smk"
+include: "rules/import_qced_reads.smk"
+
+# include: "rules/download_data.smk"
+include: "rules/qiime2_get_fastq_artfact.smk"
+# include: "rules/qiime2_get_subsample.smk"
+# include: "rules/qiime2_process.smk"
+# include: "rules/dada2_denoise.smk"
+# include: "rules/denovo_cluster.smk"
+# include: "rules/closedref_cluster.smk"
+# include: "rules/openref_cluster.smk"
+# include: "rules/seq_alignment.smk"
+# include: "rules/phylogeny_cluster.smk"
+# include: "rules/assign_taxonomy.smk"
+# include: "rules/convert_to_tsv.smk"
+# include: "rules/collapse_taxa.smk"
+# include: "rules/alpha_rarefaction.smk"
+# include: "rules/qiime2_core_metrics.smk"
+
+# include: "rules/filter_samples.smk"
+
 include: "rules/rmd_report.smk"
-include: "rules/filter_samples.smk"
 
 rule all:
 	input:
 		"index.html",
 
-		"qiime2_process/sample-metadata.qzv",
+		# "resources/metadata/qiime2_manifest_file.tsv",
+		# "resources/metadata/qiime2_sample_metadata.tsv",
+        # "config/samples.tsv",
+        # "config/units.tsv",
 
+		# "qiime2_process/sample-metadata.qzv",
+		"qiime2_process/sample-metadata.tsv",
 
-		"qiime2_process/demux.qza",
+		expand("{outdir}/{sample}_{sraNum}.fastq.gz", outdir=OUTDIR, sample=SAMPLES, sraNum=config["sraNum"]),
+        # "resources/paired/forward.fastq.gz", 
+        # "resources/paired/reverse.fastq.gz",    
+        # "resources/paired/barcodes.fastq.gz",  
+        # "resources/paired/sample_metadata.tsv",  
 
-
+		# "qiime2_process/demux.qza",
 		"qiime2_process/demux.qzv",
+		"qiime2_process/interactive1/overview.html",
+		"qiime2_process/interactive1/quality-plot.html",
+
+		# "qiime2_process/demux-subsample.qza",
+		"qiime2_process/demux-subsample.qzv",
+		"qiime2_process/interactive2/overview.html",
+		"qiime2_process/interactive2/quality-plot.html",
+
+		# "qiime2_process/rep-seqs.qza",
+		# "qiime2_process/feature-table.qza",
+		# "qiime2_process/stats.qza",
 
 
-		"qiime2_process/rep-seqs.qza",
-		"qiime2_process/feature-table.qza",
-		"qiime2_process/stats.qza",
+		# "qiime2_process/rep-seqs.qzv",
+		# "qiime2_process/feature-table.qzv",
+		# "qiime2_process/stats.qzv",
 
 
-		"qiime2_process/rep-seqs.qzv",
-		"qiime2_process/feature-table.qzv",
-		"qiime2_process/stats.qzv",
+ 		# "qiime2_process/feature-table-dn-99.qza",
+		# "qiime2_process/rep-seqs-dn-99.qza",
 
 
- 		"qiime2_process/feature-table-dn-99.qza",
-		"qiime2_process/rep-seqs-dn-99.qza",
+		# "qiime2_process/table-cr-85.qza",
+		# "qiime2_process/rep-seqs-cr-85.qza",
+		# "qiime2_process/unmatched-cr-85.qza",
 
 
-		"qiime2_process/table-cr-85.qza",
-		"qiime2_process/rep-seqs-cr-85.qza",
-		"qiime2_process/unmatched-cr-85.qza",
+		# "qiime2_process/table-or-85.qza",
+		# "qiime2_process/rep-seqs-or-85.qza",
+		# "qiime2_process/new-ref-seqs-or-85.qza",
+
+		# "qiime2_process/aligned-rep-seqs.qza",
+		# "qiime2_process/masked-aligned-rep-seqs.qza",
+		# "qiime2_process/masked-aligned-rep-seqs.qzv",
 
 
-		"qiime2_process/table-or-85.qza",
-		"qiime2_process/rep-seqs-or-85.qza",
-		"qiime2_process/new-ref-seqs-or-85.qza",
+		# "qiime2_process/unrooted-tree.qza",
+  		# "qiime2_process/rooted-tree.qza",
 
-		"qiime2_process/aligned-rep-seqs.qza",
-		"qiime2_process/masked-aligned-rep-seqs.qza",
-		"qiime2_process/masked-aligned-rep-seqs.qzv",
+		# "qiime2_process/transformed/feature-table.tsv",
+		# "qiime2_process/transformed/taxonomy.tsv",
 
-
-		"qiime2_process/unrooted-tree.qza",
-  		"qiime2_process/rooted-tree.qza",
-
-		"qiime2_process/transformed/feature-table.tsv",
-		"qiime2_process/transformed/taxonomy.tsv",
-
-		"qiime2_process/feature-table-genus.qza",
+		# "qiime2_process/feature-table-genus.qza",
 		
-		"qiime2_process/alpha-rarefaction.qzv",
+		# "qiime2_process/alpha-rarefaction.qzv",
 
 
-		"qiime2_process/alpha_diversity/shannon_vector.qza",
-		"qiime2_process/beta_diversity/bray_curtis_emperor.qzv",
+		# "qiime2_process/alpha_diversity/shannon_vector.qza",
+		# "qiime2_process/beta_diversity/bray_curtis_emperor.qzv",
 
-		"results/early-table.qza",
+		# "results/early-table.qza",

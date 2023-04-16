@@ -1,13 +1,81 @@
-# config.yaml
-
-# Path to sample sheet (TSV format, columns: sample_name, condition, ...)
 samples: config/samples.tsv
-
-# Path to sequencing unit sheet (TSV format, columns: sample_name, unit, fq1, fq2)
 units: config/units.tsv
 
-core_sampling_depth: 1000
 
-alpha_max_depth: 1000
+# Read numbers
+readNum:
+  - R1
+  - R2
 
-threads: 1
+sraNum:
+  - 1
+  - 2
+  
+dataset: test
+
+mothurMethod:
+  - otu_analysis
+  - phylotype_analysis
+  - asv_analysis
+  - phylogeny_analysis
+  - error_analysis
+
+# Images in the report
+imappart:
+  - imap_part01
+  - imap_part02
+  - imap_part03
+  - imap_part04
+  - imap_part05
+  - imap_part06
+  - imap_part07
+  - imap_part08
+  - imap_part09
+  # - imap_part
+  # - imap_part
+  # - imap_part
+  # - imap_part
+  # - imap_part
+  # - imap_part
+  # - imap_part
+  
+# Group names of mock samples (e.g. Mock1_S1_L001_R1_001.fastq.gz = Mock1).
+mothurMock:
+  - Mock1
+  # - Mock2
+  # - Mock3
+
+# Group names of control samples (e.g. Water1_S2_L001_R1_001.fastq.gz = Water1).
+mothurControl:
+  - Water1
+  # - Water2
+  # - Water3
+
+# Desired alpha diversity metrics.
+mothurAlpha:
+  - nseqs
+  - coverage
+  - invsimpson
+  - shannon
+  - sobs
+
+# Desired beta diversity metrics.
+mothurBeta:
+  - sharedsobs
+  - thetayc
+  - braycurtis
+
+# Minimum read threshold for subsampling. Review sample statistics from preprocessing step
+subthresh: 100
+
+# NOTE: Leave these settings as is.
+
+
+mothurGroups:
+  - sample
+  - mock
+  - control
+
+
+# Random seed
+seed: 110912
