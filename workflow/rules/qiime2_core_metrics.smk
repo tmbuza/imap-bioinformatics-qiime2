@@ -1,6 +1,5 @@
 rule alpha_diversity_metrics:
     input:
-        script="workflow/scripts/qiime2_core_metrics.sh",
         table="qiime2_process/feature-table.qza",
         phylogeny="qiime2_process/rooted-tree.qza",
         metadata="qiime2_process/sample-metadata.tsv"
@@ -26,4 +25,4 @@ rule alpha_diversity_metrics:
         braycurtisemperor="qiime2_process/beta_diversity/bray_curtis_emperor.qzv"
     threads: config["threads"]
     shell:
-        "bash {input.script}"
+        "bash workflow/scripts/qiime2_core_metrics.sh"
