@@ -79,3 +79,7 @@ mothurGroups:
 
 # Random seed
 seed: 110912
+
+core_sampling_depth: 4000
+
+threads: 1

@@ -3,7 +3,7 @@ rule alpha_diversity_metrics:
         script="workflow/scripts/qiime2_core_metrics.sh",
         table="qiime2_process/feature-table.qza",
         phylogeny="qiime2_process/rooted-tree.qza",
-        metadata="resources/metadata/qiime2_metadata_file.tsv"
+        metadata="qiime2_process/sample-metadata.tsv"
     params: 
         config["core_sampling_depth"]
     output:
