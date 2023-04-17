@@ -7,14 +7,26 @@ configfile: "config/config.yml"# Alpha diversity
 
 rule qiime2_rarefaction:
 	input:
-		script="workflow/scripts/qiime2_rarefaction.sh",
 		table="qiime2_process/feature-table.qza",
 		phylogeny="qiime2_process/rooted-tree.qza",
-		metadata="resources/metadata/qiime2_metadata_file.tsv"
+		metadata="qiime2_process/sample-metadata.tsv",
 	output:
 		"qiime2_process/alpha-rarefaction.qzv",
 	conda:
 		"../envs/qiime220232.yml"
 	threads: 1
 	shell:
-		"bash {input.script} {output}"
+		"bash workflow/scripts/qiime2_rarefaction.sh"
+
+
+rule rarefy_interactive_report:
+	input:
+		"qiime2_process/alpha-rarefaction.qzv",
+	output:
+		"qiime2_process/rarefy_interactive/index.html",
+	conda:
+		"../envs/qiime220232.yml"
+	threads: 1
+	shell:
+		"bash workflow/scripts/rarefy_interactive_report.sh"
+

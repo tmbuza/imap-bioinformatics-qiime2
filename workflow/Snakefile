@@ -12,20 +12,24 @@ include: "rules/validate_metadata.smk"
 include: "rules/qzv_metadata_to_tsv.smk"
 include: "rules/import_qced_reads.smk"
 
-# include: "rules/download_data.smk"
-include: "rules/qiime2_get_fastq_artfact.smk"
-# include: "rules/qiime2_get_subsample.smk"
-# include: "rules/qiime2_process.smk"
-# include: "rules/dada2_denoise.smk"
+include: "rules/qiime2_demux_qza_artifact.smk"
+include: "rules/qiime2_demux_qza_subsample.smk"
+
+include: "rules/dada2_denoise.smk"
+include: "rules/qiime2_dada2_visuals.smk"
 # include: "rules/denovo_cluster.smk"
 # include: "rules/closedref_cluster.smk"
 # include: "rules/openref_cluster.smk"
-# include: "rules/seq_alignment.smk"
-# include: "rules/phylogeny_cluster.smk"
-# include: "rules/assign_taxonomy.smk"
-# include: "rules/convert_to_tsv.smk"
-# include: "rules/collapse_taxa.smk"
-# include: "rules/alpha_rarefaction.smk"
+include: "rules/seq_alignment.smk"
+include: "rules/phylogeny_cluster.smk"
+include: "rules/assign_taxonomy.smk"
+include: "rules/qiime2_export_data.smk"
+
+include: "rules/empress_community_plot.smk"
+
+include: "rules/collapse_taxa.smk"
+
+include: "rules/alpha_rarefaction.smk"
 # include: "rules/qiime2_core_metrics.smk"
 
 # include: "rules/filter_samples.smk"
@@ -60,14 +64,14 @@ rule all:
 		"qiime2_process/interactive2/overview.html",
 		"qiime2_process/interactive2/quality-plot.html",
 
-		# "qiime2_process/rep-seqs.qza",
-		# "qiime2_process/feature-table.qza",
-		# "qiime2_process/stats.qza",
+		"qiime2_process/rep-seqs.qza",
+		"qiime2_process/feature-table.qza",
+		"qiime2_process/stats.qza",
 
 
-		# "qiime2_process/rep-seqs.qzv",
-		# "qiime2_process/feature-table.qzv",
-		# "qiime2_process/stats.qzv",
+		"qiime2_process/rep-seqs.qzv",
+		"qiime2_process/feature-table.qzv",
+		"qiime2_process/stats.qzv",
 
 
  		# "qiime2_process/feature-table-dn-99.qza",
@@ -83,20 +87,27 @@ rule all:
 		# "qiime2_process/rep-seqs-or-85.qza",
 		# "qiime2_process/new-ref-seqs-or-85.qza",
 
-		# "qiime2_process/aligned-rep-seqs.qza",
-		# "qiime2_process/masked-aligned-rep-seqs.qza",
-		# "qiime2_process/masked-aligned-rep-seqs.qzv",
+		"qiime2_process/aligned-rep-seqs.qza",
+		"qiime2_process/masked-aligned-rep-seqs.qza",
+		"qiime2_process/masked-aligned-rep-seqs.qzv",
 
+		"qiime2_process/unrooted-tree.qza",
+  		"qiime2_process/rooted-tree.qza",
 
-		# "qiime2_process/unrooted-tree.qza",
-  		# "qiime2_process/rooted-tree.qza",
+		"qiime2_process/unrooted-tree.qza",
+  		"qiime2_process/rooted-tree.qza",
 
-		# "qiime2_process/transformed/feature-table.tsv",
-		# "qiime2_process/transformed/taxonomy.tsv",
+  		"qiime2_process/taxonomy.qza",
+  		"qiime2_process/taxonomy.qzv",
 
-		# "qiime2_process/feature-table-genus.qza",
+		"qiime2_process/transformed/feature-table.tsv",
+		"qiime2_process/transformed/taxonomy.tsv",
+
+ 		"qiime2_process/tree.qzv",
+
+		"qiime2_process/feature-table-genus.qza",
 		
-		# "qiime2_process/alpha-rarefaction.qzv",
+		"qiime2_process/alpha-rarefaction.qzv",
 
 
 		# "qiime2_process/alpha_diversity/shannon_vector.qza",

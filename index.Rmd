@@ -110,6 +110,21 @@ A detailed interactive snakemake HTML report is available [here](https://complex
 [Interactive plot for read quality control.](qiime2_process/interactive2/quality-plot.html)
 
 
+<br>
+
+## Tree clusters
+[Community interactive tree with index.html](qiime2_process/tree_interactive/index.html)
+
+<br>
+
+[Community interactive tree with empress.html](qiime2_process/tree_interactive/index.html)
+
+
+<br>
+
+[Rarefaction interactive report](qiime2_process/rarefy_interactive/index.html)
+
+
 <br><hr width=100%><br>
 
 ## Related work
