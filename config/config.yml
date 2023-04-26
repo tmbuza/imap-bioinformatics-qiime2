@@ -11,7 +11,7 @@ sraNum:
   - 1
   - 2
   
-dataset: test
+dataset: resources/reads
 
 mothurMethod:
   - otu_analysis
